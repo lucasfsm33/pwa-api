@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#000000">
+  <link rel="apple-touch-icon" sizes="192x192" href="icones/android-launchericon-192-192.png" media="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+  <title>Filme</title>
+<html>
+<body>
+  <div class="container">
+    <h1 class="page-title">
+      CINEFILMES
+    </h1>
+    <link rel="stylesheet" href="style.css">
+    <img src="" class="page-logo" alt="">
+    <p class="page-subtitle">
+      Qual seu filme favorito?
+    </p>
+    <div class="form-wrapper">
+      <input type="text" id="filme" name="filme" placeholder="Insira o endereço do Filme">
+      <button onClick="adicionarFilme()">Adicionar Filme</button>
+    </div>
+  </div>
+  <div id="listaFilmes"></div>
+  <a href="" target="_blank">
+    <img src="" alt="" class="">
+  </a>
+  <script>
+function adicionarFilme() {
+
+const tabela = document.getElementById('minha-tabela');
+
+
+// faz a requisição HTTP à API e processa os dados recebidos
+fetch('http://127.0.0.1:3000/filme/')
+  .then(response => response.json())
+  .then(pedido => {
+    console.log(pedido);
+    
+  })
+  .catch(error => console.error(error));
+}
+   </script>
+     <script type="module">
+      import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+      const el = document.createElement('pwa-update');
+      document.body.appendChild(el);
+    </script>
+</body>
+
+</html>
